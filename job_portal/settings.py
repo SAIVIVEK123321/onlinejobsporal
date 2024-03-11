@@ -26,7 +26,8 @@ SECRET_KEY = 'ih)tbnc6#9e+$r*=fu&urnnv7m=b(lzl4%#b+0v#vg(517aqec'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+
 
 # Application definition
 AUTH_USER_MODEL = 'accounts.User'
@@ -133,13 +134,13 @@ LOGIN_REDIRECT_URL='applyjob<int:job_id>'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR , 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR , 'static')
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR , 'job_portal/static')
-]
+#STATICFILES_DIRS = [
+ #   os.path.join(BASE_DIR , 'job_portal/static')
+#]
 
 # Media Folder
 MEDIA_ROOT =  os.path.join(BASE_DIR ,'staticfiles_build', 'media')
@@ -151,4 +152,5 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
-
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
