@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,10 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ih)tbnc6#9e+$r*=fu&urnnv7m=b(lzl4%#b+0v#vg(517aqec'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
 
 # Application definition
 AUTH_USER_MODEL = 'accounts.User'
@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'job_portal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jobs',
+        'NAME': 'railway',
         'USER':'postgres',
-        'PASSWORD':'Vivek@2004',
-        'HOST':'localhost',
-        'PORT':'5432'
+        'PASSWORD':'HNmiRbKwCvZbVjIyhsNXWybhvWGGQhhk',
+        'HOST':'roundhouse.proxy.rlwy.net',
+        'PORT':'48808'
     }
 }
 
@@ -142,7 +142,7 @@ STATICFILES_DIRS = [
 ]
 
 # Media Folder
-MEDIA_ROOT =  os.path.join(BASE_DIR , 'media')
+MEDIA_ROOT =  os.path.join(BASE_DIR ,'staticfiles_build', 'media')
 
 MEDIA_URL = '/media/'
 
@@ -151,3 +151,4 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
